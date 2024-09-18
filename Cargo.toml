@@ -1,0 +1,30 @@
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.77.2"
+authors = [
+    "https://youtu.be/5HsBkQzlIhY?si=ND7dnStraHGFLDDC&t=20",
+]
+
+[profile.release]
+opt-level = 'z' # size
+lto = true # link time optimisation
+codegen-units = 1
+panic = 'abort' # AAAAAAAAAAAAAAAAAAAAAAAAAAA
+strip = 'symbols'
+
+[workspace]
+resolver = "2"
+members = [
+    "svc/maths",
+    "svc/neural_net",
+#    "svc/pca",
+]
+
+[workspace.dependencies]
+num = "0.4.3"
+rand = "0.8.5"
+log = "0.4.22"
+env_logger = "0.11.5"
+ctor = "0.2.8"
+
